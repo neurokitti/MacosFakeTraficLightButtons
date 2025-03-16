@@ -1,4 +1,3 @@
-
 import SwiftUI
 import AppKit
 
@@ -98,17 +97,17 @@ struct MacOSTrafficLightButton: View {
     // MARK: - Colour Configuration
     private var fillColor: Color {
         switch buttonType {
-        case .close: return isFocused ? Color(red: 236/255, green: 106/255, blue: 94/255) : idleFillColor
-        case .minimize: return isFocused ? Color(red: 254/255, green: 188/255, blue: 46/255) : idleFillColor
-        case .fullscreen: return isFocused ? Color(red: 40/255, green: 200/255, blue: 65/255) : idleFillColor
+        case .close: return ( isFocused || hoverState ) ? Color(red: 236/255, green: 106/255, blue: 94/255) : idleFillColor
+        case .minimize: return ( isFocused || hoverState )  ? Color(red: 254/255, green: 188/255, blue: 46/255) : idleFillColor
+        case .fullscreen: return ( isFocused || hoverState )  ? Color(red: 40/255, green: 200/255, blue: 65/255) : idleFillColor
         }
     }
     
     private var strokeColor: Color {
         switch buttonType {
-        case .close: return isFocused ? Color(red: 208/255, green: 78/255, blue: 69/255) : strokeIdleColor
-        case .minimize: return isFocused ? Color(red: 224/255, green: 156/255, blue: 21/255) : strokeIdleColor
-        case .fullscreen: return isFocused ? Color(red: 21/255, green: 169/255, blue: 31/255) : strokeIdleColor
+        case .close: return ( isFocused || hoverState )  ? Color(red: 208/255, green: 78/255, blue: 69/255) : strokeIdleColor
+        case .minimize: return ( isFocused || hoverState )  ? Color(red: 224/255, green: 156/255, blue: 21/255) : strokeIdleColor
+        case .fullscreen: return ( isFocused || hoverState )  ? Color(red: 21/255, green: 169/255, blue: 31/255) : strokeIdleColor
         }
     }
     
@@ -120,4 +119,3 @@ struct MacOSTrafficLightButton: View {
         case .fullscreen: return "resize"
         }
     }
-}
