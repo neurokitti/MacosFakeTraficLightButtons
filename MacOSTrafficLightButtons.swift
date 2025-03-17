@@ -1,3 +1,5 @@
+
+
 import SwiftUI
 import AppKit
 
@@ -86,7 +88,7 @@ struct MacOSTrafficLightButton: View {
                 Image(imageName)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 7, height: 7)
+                    .frame(width: 6, height: 6)
                     .opacity(hoverState ? 0.6 : 0)
             }
         }
@@ -119,3 +121,4 @@ struct MacOSTrafficLightButton: View {
         case .fullscreen: return "resize"
         }
     }
+}
